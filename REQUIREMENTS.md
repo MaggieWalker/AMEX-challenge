@@ -8,30 +8,30 @@ The requirements below are broken into separate **tiers**, which model the way w
 
 #### Backend
 
-- [ ] Write a `campuses` model with the following information:
-  - [ ] name - not empty or null [check]
-  - [ ] imageUrl - with a default value [check]
-  - [ ] address - not empty or null [check]
-  - [ ] description - extremely large text [check]
-- [ ] Write a `students` model with the following information:
-  - [ ] firstName - not empty or null [check]
-  - [ ] lastName - not empty or null [check]
-  - [ ] email - not empty or null; must be a valid email [check]
-  - [ ] imageUrl - with a default value [check]
-  - [ ] gpa - decimal between 0.0 and 4.0 [check]
-- [ ] Students may be associated with at most one campus. Likewise, campuses may be associated with many students [check]
+- [check] Write a `campuses` model with the following information:
+  - [check] name - not empty or null 
+  - [check] imageUrl - with a default value
+  - [check] address - not empty or null
+  - [check] description - extremely large text
+- [check] Write a `students` model with the following information:
+  - [check] firstName - not empty or null
+  - [check] lastName - not empty or null
+  - [check] email - not empty or null; must be a valid email
+  - [check] imageUrl - with a default value
+  - [check] gpa - decimal between 0.0 and 4.0
+- [check] Students may be associated with at most one campus. Likewise, campuses may be associated with many students 
 
-- [ ] Write a route to serve up all students [check]
-- [ ] Write a route to serve up all campuses [check]
+- [check] Write a route to serve up all students
+- [check] Write a route to serve up all campuses
 
 #### Frontend
-- [ ] Write a campuses sub-reducer to manage campuses in your Redux store
-- [ ] Write a students sub-reducer to manage students in your Redux store
-- [ ] Write a component to display a list of all campuses (just their names and images)
-- [ ] Write a component to display a list of all students (just their names)
-- [ ] Display the all-campuses component when the url matches `/campuses`
-- [ ] Display the all-students component when the url matches `/students`
-- [ ] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
+- [check] Write a campuses sub-reducer to manage campuses in your Redux store
+- [check] Write a students sub-reducer to manage students in your Redux store 
+- [check] Write a component to display a list of all campuses (just their names and images)
+- [check] Write a component to display a list of all students (just their names)
+- [check] Display the all-campuses component when the url matches `/campuses`
+- [check] Display the all-students component when the url matches `/students`
+- [check] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
 
 Congrats! You have completed your first vertical slice! Make sure to `commit -m "Feature: Get All Campuses and Students"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
 

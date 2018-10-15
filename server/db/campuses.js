@@ -16,7 +16,7 @@ const Campuses = db.define('campuses', {
         },
         defaultValue: 'https://i.pinimg.com/originals/17/1a/9c/171a9c1db6d7c65e132d55327913a05d.jpg',
     },
-    adress: {
+    address: {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
