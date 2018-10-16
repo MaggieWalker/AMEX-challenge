@@ -29,12 +29,14 @@ class SingleCampus extends Component {
                 <p>Address: {currCampus.address.toString()}</p>
                 <p>Description: {currCampus.description.toString()}</p>
                 <p>Students:
+                    <ul>
                 {
                     currCampus.students[0] ? currCampus.students.map(student => {
-                    return ' ' + student.firstName + ' ' + student.lastName + ' '
+                    return <li key={student.id}> {student.firstName} {student.lastName} </li>
                 })
                 : <p>No students registered!</p>
                 }
+                    </ul>
                 </p>
             </div>
         </div> 

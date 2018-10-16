@@ -47,20 +47,20 @@ Congrats! You have completed your first vertical slice! Make sure to `commit -m 
 - [check] Write a route to serve up a single student (based on their id), _including that student's campus_
 
 #### Frontend
-- [ ] Write a component to display a single campus with the following information:
+- [check] Write a component to display a single campus with the following information:
   - [check] The campus's name, image, address and description
   - [check] A list of the names of all students in that campus (or a helpful message if it doesn't have any students)
 - [check] Display the appropriate campus's info when the url matches `/campuses/:campusId`
-- [ ] Clicking on a campus from the all-campuses view should navigate to show that campus in the single-campus view
+- [check] Clicking on a campus from the all-campuses view should navigate to show that campus in the single-campus view
 
-- [ ] Write a component to display a single student with the following information:
-  - [ ] The student's full name, email, image, and gpa
-  - [ ] The name of their campus (or a helpful message if they don't have one)
-- [ ] Display the appropriate student when the url matches `/students/:studentId`
-- [ ] Clicking on a student from the all-students view should navigate to show that student in the single-student view
+- [check] Write a component to display a single student with the following information:
+  - [check] The student's full name, email, image, and gpa
+  - [check] The name of their campus (or a helpful message if they don't have one)
+- [check] Display the appropriate student when the url matches `/students/:studentId`
+- [check] Clicking on a student from the all-students view should navigate to show that student in the single-student view
 
-- [ ] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
-- [ ] Clicking on the name of a campus in the single-student view should navigate to show that campus in the single-campus view
+- [check] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
+- [check] Clicking on the name of a campus in the single-student view should navigate to show that campus in the single-campus view
 
 Congrats! You have completed your second vertical slice! Make sure to `commit -m "Feature: Get Single Campus and Student"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
 

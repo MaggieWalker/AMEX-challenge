@@ -24,7 +24,7 @@ render() {
                         <img src={currStudent.image.toString()} height="300" width="300" />
             </div>
                 <p>Email: {currStudent.email}</p>
-                <p>Campus: {currStudent.campus.name}</p>
+                <p>Campus: {currStudent.campus === null ? `This student is not registered to a campus yet!` : currStudent.campus.name }</p>
                 <p>GPA: {currStudent.GPA}</p>
         </div>
         : <div>Nothing to load!</div>

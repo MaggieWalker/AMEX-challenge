@@ -19,10 +19,12 @@ class StudentList extends Component {
                     {
                     students.map(student => (
                     <li key={student.id}>
-                        <h3>Student Name: {student.firstName} {student.lastName}
-                        <br />
-                        <Link to={`/students/${student.id}`}><img src={student.image} height="200" width="200" /></Link>
-                        </h3>
+                        <Link to={`/students/${student.id}`}>
+                            <h3>Student Name: {student.firstName} {student.lastName}
+                                <br />
+                                <img src={student.image} height="200" width="200" />
+                            </h3>
+                        </Link>
                     </li>))
                     }
                 </ul>
