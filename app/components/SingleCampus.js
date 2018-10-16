@@ -10,28 +10,27 @@ class SingleCampus extends Component {
     }
     
     render() {
-        // const name = campus.name
-        // const students = campus.students
-        console.log('pathname', window.location.pathname)
         const pathname = window.location.pathname
         const campusId = pathname.slice(-1)
-        const campus = this.props.campuses[campusId]
+        console.log('this.props', this.props)
+        const campusList = this.props.campuses
+        const currCampus = campusList.filter(campus => campus.id.toString() === campusId.toString())[0]
         return (
         <div>
-            { campus ?
+            { currCampus ?
         <div>
             <div id="single-campus">
-                 <h3>Campus: {campus.name.toString()}</h3>
+                 <h3>Campus: {currCampus.name.toString()}</h3>
                         <br />
-                        <img src={campus.image.toString()} height="300" width="300" />
+                        <img src={currCampus.image.toString()} height="300" width="300" />
             </div>
 
             <div>
-                <p>Address: {campus.address.toString()}</p>
-                <p>Description: {campus.description.toString()}</p>
+                <p>Address: {currCampus.address.toString()}</p>
+                <p>Description: {currCampus.description.toString()}</p>
                 <p>Students:
                 {
-                    campus.students[0] ? campus.students.map(student => {
+                    currCampus.students[0] ? currCampus.students.map(student => {
                     return ' ' + student.firstName + ' ' + student.lastName + ' '
                 })
                 : <p>No students registered!</p>
