@@ -30,10 +30,11 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
+        console.log(req.body)
         const newCampus = await Campuses.create(
             {
                 name: req.body.name,
-                address: req.body.address,
+                address: 'TBD',
                 description: 'TBD'
             }
         )

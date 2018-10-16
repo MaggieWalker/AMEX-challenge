@@ -73,13 +73,13 @@ Congrats! You have completed your second vertical slice! Make sure to `commit -m
 
 #### Backend
 
-- [ ] Write a route to add a new campus
-- [ ] Write a route to add a new student
+- [check] Write a route to add a new campus
+- [check] Write a route to add a new student
 
 #### Frontend
 
-- [ ] Write a component to display a form for adding a new campus that contains inputs for _at least_ the name and address.
-- [ ] Display this component EITHER as part of the all-campuses view, or as its own view
+- [check] Write a component to display a form for adding a new campus that contains inputs for _at least_ the name and address.
+- [check] Display this component EITHER as part of the all-campuses view, or as its own view
 - [ ] Submitting the form with a valid name/address should:
   - [ ] Make an AJAX request that causes the new campus to be persisted in the database
   - [ ] Add the new campus to the list of campuses without needing to refresh the page

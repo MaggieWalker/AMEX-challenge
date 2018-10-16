@@ -4,6 +4,7 @@ import CampusList from './CampusList'
 import StudentList from './StudentList'
 import SingleCampus from './SingleCampus'
 import SingleStudent from './SingleStudent'
+import CampusForm from './CampusForm'
 
 const Root = () => {
   return (
@@ -22,6 +23,7 @@ const Root = () => {
       <main>
         <h1>Welcome to the Margaret Hamilton Academy of JavaScript!</h1>
         <Switch>
+          <Route path="/campuses/new" component={CampusForm} />
           <Route path="/campuses/:id" component={SingleCampus} />
           <Route path="/campuses" component={CampusList} />
           <Route path="/students/:id" component={SingleStudent} />

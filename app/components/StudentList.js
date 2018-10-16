@@ -22,7 +22,7 @@ class StudentList extends Component {
                         <Link to={`/students/${student.id}`}>
                             <h3>Student Name: {student.firstName} {student.lastName}
                                 <br />
-                                <img src={student.image} height="200" width="200" />
+                                <img src={student.image} height="200" />
                             </h3>
                         </Link>
                     </li>))

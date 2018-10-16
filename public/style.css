@@ -10,10 +10,10 @@
 
 body {
   background: linear-gradient(#ffffff, #c0c0c0);
-  height: 100vh;
+  height: 100%;
   padding: 0;
   margin: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 nav {
@@ -48,4 +48,9 @@ main {
   color: darkgrey;
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace
+}
+
+#addCampus {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px
 }

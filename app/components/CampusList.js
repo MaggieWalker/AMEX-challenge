@@ -14,11 +14,14 @@ class CampusList extends Component {
         const campuses = this.props.campuses
         return (
             <div>
+                <div>
+                   <Link to="/campuses/new" activeClassName ="active" id="addCampus">Add New Campus</Link>
+                </div>
                 <ul id="campus-list">
                     {
                         campuses.map(campus =>
                     (
-                    <li key={campus.id}> 
+                    <li key={campus.id}>
                         <Link to={`/campuses/${campus.id}`} >
                         <h3>Campus: {campus.name}
                             <br /><img src={campus.image} height="300" width="300" />
