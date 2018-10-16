@@ -1,7 +1,6 @@
 //action type
 const GOT_CAMPUSES = 'GOT_CAMPUSES'
 
-
 //This is my campus sub-reducer
 export default function campusesReducer (state = [], action) {
     switch (action.type) {

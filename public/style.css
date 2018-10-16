@@ -23,6 +23,7 @@ nav {
   display: flex;
   height: 80px;
   padding: 10px;
+  font-family: 'Courier New', Courier, monospace
 }
 
 main {
@@ -30,4 +31,21 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#navlinks > li {
+  display: inline;
+  margin: 30px;  
+}
+
+#studentLink {
+  color: darkgrey;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace
+}
+
+#campusLink {
+  color: darkgrey;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchStudents } from '../reducers/index'
+import { Link } from 'react-router-dom'
 
 class StudentList extends Component {
 
@@ -20,10 +21,9 @@ class StudentList extends Component {
                     <li key={student.id}>
                         <h3>Student Name: {student.firstName} {student.lastName}
                         <br />
-                        <img src={student.image} height="200" width="200" />
+                        <Link to={`/students/${student.id}`}><img src={student.image} height="200" width="200" /></Link>
                         </h3>
-                    </li>)
-                    )
+                    </li>))
                     }
                 </ul>
             </div>

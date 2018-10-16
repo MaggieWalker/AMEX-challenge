@@ -2,25 +2,29 @@ import React from 'react'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import CampusList from './CampusList'
 import StudentList from './StudentList'
+import SingleCampus from './SingleCampus'
+import SingleStudent from './SingleStudent'
 
 const Root = () => {
   return (
     <div>
       <nav>
         Welcome!
-        <ul>
+        <ul id="navlinks">
           <li>
-            <NavLink to="/campuses" activeClassName="active">Campuses</NavLink>
+            <NavLink to="/campuses" activeClassName="active" id="campusLink">Campuses</NavLink>
           </li>
           <li>
-            <NavLink to="/students" activeClassName="active">Students</NavLink>
+            <NavLink to="/students" activeClassName="active" id="studentLink">Students</NavLink>
           </li>
         </ul>
       </nav>
       <main>
         <h1>Welcome to the Margaret Hamilton Academy of JavaScript!</h1>
         <Switch>
+          <Route path="/campuses/:id" component={SingleCampus} />
           <Route path="/campuses" component={CampusList} />
+          <Route path="/students/:id" component={SingleStudent} />
           <Route path="/students" component={StudentList} />
         </Switch>
       </main>
