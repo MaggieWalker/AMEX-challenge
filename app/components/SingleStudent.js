@@ -11,7 +11,7 @@ async componentDidMount() {
 
 render() {
     const pathname = window.location.pathname
-    const studentId = pathname.slice(-1)
+    const studentId = pathname.slice(10)
     const studentList = this.props.students
     const currStudent = studentList.filter(student => student.id.toString() === studentId.toString())[0]
     return (

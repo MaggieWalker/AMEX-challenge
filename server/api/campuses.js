@@ -34,8 +34,8 @@ router.post('/', async (req, res, next) => {
         const newCampus = await Campuses.create(
             {
                 name: req.body.name,
-                address: 'TBD',
-                description: 'TBD'
+                address: req.body.address,
+                description: req.body.description
             }
         )
         res.status(201).json(newCampus)

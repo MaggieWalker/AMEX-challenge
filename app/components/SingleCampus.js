@@ -11,8 +11,10 @@ class SingleCampus extends Component {
     
     render() {
         const pathname = window.location.pathname
-        const campusId = pathname.slice(-1)
+        const campusId = pathname.slice(10)
+        console.log('props.location', this.props.location)
         console.log('this.props', this.props)
+        console.log('campusId', campusId)
         const campusList = this.props.campuses
         const currCampus = campusList.filter(campus => campus.id.toString() === campusId.toString())[0]
         return (

@@ -10,6 +10,7 @@ import studentsReducer from './students'
 const GOT_CAMPUSES = 'GOT_CAMPUSES'
 const GOT_STUDENTS = 'GOT_STUDENTS'
 const NEW_CAMPUS = 'NEW_CAMPUS'
+const NEW_STUDENT = 'NEW_STUDENT'
 
 
 //action creator
@@ -27,6 +28,11 @@ export const gotStudents = (students) => ({
 export const newCampus = (campus) => ({
   type: NEW_CAMPUS,
   campus
+})
+
+export const newStudent = (student) => ({
+  type: NEW_STUDENT,
+  student
 })
 //Campus thunk creator/action creator. Creating my thunk function
 export const fetchCampuses = () => {
@@ -50,12 +56,19 @@ export const fetchStudents = () => {
 
 export const addCampus = (campus) => {
   return async (dispatch) => {
-    const postedCampus = await axios.post('/api/campuses', {name: campus})
+    const postedCampus = await axios.post('/api/campuses', campus)
     const currAction = newCampus(postedCampus);
     dispatch(currAction)
   }
 }
 
+export const addStudent = (student) => {
+  return async (dispatch) => {
+    const postedStudent = await axios.post('/api/students', student)
+    const currAction = newStudent(postedStudent);
+    dispatch(currAction)
+  }
+}
 
 // My current initial state is {campuses: [{}], students: [{}]}
 ////////////////////////////////////////////////////////////

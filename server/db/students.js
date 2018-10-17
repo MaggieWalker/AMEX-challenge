@@ -2,6 +2,11 @@ const db = require('./database')
 const Sequelize = require('sequelize')
 
 const Students = db.define('students', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
     firstName: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -29,7 +34,7 @@ const Students = db.define('students', {
         validate: {
             isUrl: true,
         },
-        defaultValue: 'https://tinyurl.com/yboxwgw8',
+        defaultValue: 'https://msr7.net/images/generic-student-9.jpg',
     },
     GPA: {
         type: Sequelize.DECIMAL,

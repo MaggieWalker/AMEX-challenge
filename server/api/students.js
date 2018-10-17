@@ -35,7 +35,6 @@ router.post('/', async (req, res, next) => {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
-                GPA: 4.0
             }
         )
         res.status(201).json(newStudents)

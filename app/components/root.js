@@ -5,12 +5,13 @@ import StudentList from './StudentList'
 import SingleCampus from './SingleCampus'
 import SingleStudent from './SingleStudent'
 import CampusForm from './CampusForm'
+import StudentForm from './StudentForm'
 
 const Root = () => {
   return (
     <div>
       <nav>
-        Welcome!
+        <NavLink to="/" activeClassName="active" id="homepage">Welcome!</NavLink>
         <ul id="navlinks">
           <li>
             <NavLink to="/campuses" activeClassName="active" id="campusLink">Campuses</NavLink>
@@ -26,6 +27,7 @@ const Root = () => {
           <Route path="/campuses/new" component={CampusForm} />
           <Route path="/campuses/:id" component={SingleCampus} />
           <Route path="/campuses" component={CampusList} />
+          <Route path="/students/new" component={StudentForm} />
           <Route path="/students/:id" component={SingleStudent} />
           <Route path="/students" component={StudentList} />
         </Switch>

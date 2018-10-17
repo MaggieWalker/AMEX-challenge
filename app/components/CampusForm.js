@@ -25,6 +25,8 @@ class CampusForm extends Component {
         super()
         this.state = {
             name: 'ExampleName',
+            address: 'ExampleAddress',
+            description: 'ExampleDescription'
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -35,17 +37,32 @@ componentDidMount() {
 
 handleSubmit(event){
     event.preventDefault();
-    this.props.insertCampus(this.state.name);
-    console.log('this.state.name in submit', this.state.name)
+    this.props.insertCampus(
+        {
+            name: this.state.name,
+            address: this.state.address,
+            description: this.state.description
+        }
+        );
     console.log('I have submitted!')//not sure yet
     document.getElementById('campusInput').value = '';
+    document.getElementById('addressInput').value = '';
+    document.getElementById('descriptionInput').value = '';
     }
 
 handleChange(event){
     event.preventDefault();
-    console.log('event', event.target.value);
-    this.setState({name: event.target.value})
+    console.log('event target', event.target);
+    console.log('state', this.state)
+    const eventTarget = event.target.name;
+    if (eventTarget === 'name') {
+        this.setState({name: event.target.value})
+    } else if (eventTarget === 'address') {
+        this.setState({address: event.target.value})
+    } else if (eventTarget === 'description') {
+        this.setState({description: event.target.value})
     }
+}
 
 render() {
 
@@ -54,6 +71,7 @@ render() {
         <form onSubmit={this.handleSubmit}>
             <input type="text" name="name" id="campusInput" onChange={this.handleChange} placeholder="Name" />
             <input type="text" name="address" id="addressInput" onChange={this.handleChange} placeholder="Address" />
+            <input type="text" name="description" id="descriptionInput" onChange={this.handleChange} placeholder="Description" />
             <button type="submit" id="campusButton">Add New Campus!</button>
         </form>
     )
@@ -68,7 +86,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        insertCampus: (name) => dispatch(addCampus(name))
+        insertCampus: (campus) => dispatch(addCampus(campus))
     }
 }
 

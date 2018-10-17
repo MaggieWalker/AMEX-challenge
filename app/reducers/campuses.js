@@ -9,8 +9,6 @@ export default function campusesReducer (state = initialState, action) {
       case GOT_CAMPUSES:
         return action.campuses;
       case NEW_CAMPUS:
-      console.log('action campus data', action.campus.data)
-      console.log('state', state)
         return [...state, action.campus.data];
       default:
         return state;

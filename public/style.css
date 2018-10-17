@@ -50,6 +50,12 @@ main {
   font-family: 'Courier New', Courier, monospace
 }
 
+#homepage {
+  color: darkgrey;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace
+}
+
 #addCampus {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px

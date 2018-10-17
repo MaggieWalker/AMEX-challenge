@@ -15,6 +15,9 @@ class StudentList extends Component {
         console.log(students)
         return (
             <div>
+                <div>
+                   <Link to="/students/new" activeClassName ="active" id="addStudent">Add New Student</Link>
+                </div>
                 <ul id="student-list">
                     {
                     students.map(student => (
