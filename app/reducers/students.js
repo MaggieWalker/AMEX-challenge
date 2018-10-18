@@ -1,4 +1,4 @@
-//action type
+//action types
 const GOT_STUDENTS = 'GOT_STUDENTS';
 const NEW_STUDENT = 'NEW_STUDENT';
 const DELETE_STUDENT = 'DELETE_STUDENT';

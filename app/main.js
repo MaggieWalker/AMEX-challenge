@@ -1,19 +1,17 @@
-import React from 'react'
-import {render} from 'react-dom'
-import {Provider} from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import store from './store'
-import Root from './components/root'
+import store from './store';
+import Root from './components/root';
 
-
-//They got ReactDOM.render by deconstructing above
-//Not sure if I need Router
+//They got ReactDOM.render by deconstructing above!
 render(
   <Provider store={store}>
-  <Router>
-    <Root />
-  </Router>
+    <Router>
+      <Root />
+    </Router>
   </Provider>,
   document.getElementById('main')
-)
+);

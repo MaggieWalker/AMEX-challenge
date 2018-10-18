@@ -45,7 +45,6 @@ router.post('/', async (req, res, next) => {
 
 router.delete('/', async (req, res, next) => {
   try {
-    console.log('req.body', req.body);
     await Students.destroy({
       where: {
         id: req.body.id,

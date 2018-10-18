@@ -1,43 +1,42 @@
-import React, {Component} from 'react'
-import addCampus from '../reducers/index'
+//This is an unused component, but would be the basis for a higher order form component
 
-const createForm = (FormComponent) => {
+import React, { Component } from 'react';
+import addCampus from '../reducers/index';
+
+const createForm = FormComponent => {
   return class StatefulForm extends Component {
     constructor() {
-      super()
+      super();
       this.state = {
-          name: '',
-      }
-      this.handleSubmit = this.handleSubmit.bind(this)
-      this.handleChange = this.handleChange.bind(this)
+        name: '',
+      };
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleChange = this.handleChange.bind(this);
     }
 
-    handleSubmit(event){
+    handleSubmit(event) {
       event.preventDefault();
-      dispatch(addCampus({name: 'Maggie'}))
-      // addCampus({name: document.getElementById('campusInput').value});
-      console.log(event.target.value)
-      console.log('I have submitted!')//not sure yet
+      dispatch(addCampus({ name: 'Maggie' }));
       document.getElementById('campusInput').value = '';
     }
 
-    handleChange(event){
+    handleChange(event) {
       event.preventDefault();
-      console.log('event', event.target.value);
-      this.setState({name: event.target.value})
+      this.setState({ name: event.target.value });
     }
 
-    render(){
-      return <FormComponent
-        {...this.props}
-        {...this.state}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+    render() {
+      return (
+        <FormComponent
+          {...this.props}
+          {...this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      );
     }
-  }
-}
+  };
+};
 
-export default createForm
+export default createForm;
 
-//Map dispatch to props?? Why is my action not being recognized?
