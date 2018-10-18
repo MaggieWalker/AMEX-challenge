@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { fetchStudents } from '../reducers/index'
+import { fetchStudents, removeStudent } from '../reducers/index'
 import { Link } from 'react-router-dom'
 
 class StudentList extends Component {
+    constructor() {
+        super()
+        this.handleClick = this.handleClick.bind(this)
+    }
 
     async componentDidMount() {
         console.log('StudentList mounted!')
-        await this.props.fetchInitialStudents()
+        await this.props.actions.fetchInitialStudents()
+    }
+
+    async handleClick(event) {
+        event.preventDefault();
+        const studentId = event.target.id
+        await this.props.actions.removeSpecificStudent({id: studentId})
+        console.log('long console', this.props.actions.removeSpecificStudent({id: studentId}))
     }
 
     render() {
@@ -21,14 +32,18 @@ class StudentList extends Component {
                 <ul id="student-list">
                     {
                     students.map(student => (
-                    <li key={student.id}>
+                    <div key={student.id}>
+                    <li>
                         <Link to={`/students/${student.id}`}>
-                            <h3>Student Name: {student.firstName} {student.lastName}
+                            <h3>{student.firstName} {student.lastName}
                                 <br />
-                                <img src={student.image} height="200" />
+                                <img src={student.image} height="200" width="200" />
                             </h3>
                         </Link>
-                    </li>))
+                        <button type="button" id={`${student.id}`} onClick={this.handleClick}>X</button>
+                    </li>
+                    </div>
+                    ))
                     }
                 </ul>
             </div>
@@ -44,7 +59,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchInitialStudents: () => dispatch(fetchStudents())
+        actions: {
+            fetchInitialStudents: () => dispatch(fetchStudents()),
+            removeSpecificStudent: (student) => dispatch(removeStudent(student))
+        }
     }
 }
 

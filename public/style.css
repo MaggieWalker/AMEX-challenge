@@ -9,11 +9,18 @@
 }
 
 body {
-  background: linear-gradient(#ffffff, #c0c0c0);
+  /* background: linear-gradient(#ffffff, #c0c0c0); */
+  background-attachment: scroll;
   height: 100%;
   padding: 0;
   margin: 0;
   width: 100%;
+}
+
+#welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 nav {
@@ -23,14 +30,77 @@ nav {
   display: flex;
   height: 80px;
   padding: 10px;
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
 }
 
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+#addCampus {
+  display: flex;
   justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+
+#addStudent {
+  display: flex;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px
+}
+
+input {
+  width: 20em;
+  height: 5em;
+  display: table-cell;
+  width: 100%;
+  font-size: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input::placeholder {
+  font-size: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#studentButton, #campusButton {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font: bold;
+  color: black;
+  height: 4em;
+  width: auto;
+  border-style: solid;
+  border-color: dimgray
+}
+
+#campus-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  flex-basis: auto
+}
+
+#student-list {
+  list-style-type: none;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5%;
+  flex-basis: auto;
+}
+
+#student-list > li {
+  display: flex;
+  align-content: center;
 }
 
 #navlinks > li {
@@ -54,9 +124,4 @@ main {
   color: darkgrey;
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace
-}
-
-#addCampus {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px
 }

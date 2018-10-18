@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { fetchCampuses } from '../reducers/index'
+import { fetchCampuses, removeCampus } from '../reducers/index'
 import { Link } from 'react-router-dom'
 
 class CampusList extends Component {
+    constructor() {
+        super()
+        this.handleClick = this.handleClick.bind(this)
+    }
 
     async componentDidMount() {
         console.log('CampusList mounted!')
-        await this.props.fetchInitialCampuses()
+        await this.props.actions.fetchInitialCampuses()
+    }
+
+    async handleClick(event) {
+        event.preventDefault();
+        const campusId = event.target.id
+        await this.props.actions.removeSpecificCampus({id: campusId})
+        console.log('long console', this.props.actions.removeSpecificCampus({id: campusId}))
     }
 
     render() {
@@ -21,13 +32,16 @@ class CampusList extends Component {
                     {
                         campuses.map(campus =>
                     (
-                    <li key={campus.id}>
+                    <div key={campus.id}>
+                    <li>
                         <Link to={`/campuses/${campus.id}`} >
                         <h3>Campus: {campus.name}
                             <br /><img src={campus.image} height="300" width="300" />
                         </h3>
                         </Link>
+                        <button type="button" id={`${campus.id}`} onClick={this.handleClick}>X</button>
                     </li>
+                    </div>
                    ))
                     }
                 </ul>
@@ -44,7 +58,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchInitialCampuses: () => dispatch(fetchCampuses())
+        actions: {
+            fetchInitialCampuses: () => dispatch(fetchCampuses()),
+            removeSpecificCampus: (campus) => dispatch(removeCampus(campus))
+        }
     }
 }
 

@@ -44,4 +44,18 @@ router.post('/', async (req, res, next) => {
     }
 })
 
+router.delete('/', async (req, res, next) => {
+    try {
+        console.log('req.body', req.body)
+        await Campuses.destroy( {
+            where: {
+                id: req.body.id
+            }
+        })
+        res.json({deletedCampus: req.body.id})
+    } catch (err) {
+        next(err)
+    }
+})
+
 module.exports = router
