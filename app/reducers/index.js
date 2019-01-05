@@ -7,6 +7,7 @@ import campusesReducer from './campuses';
 import studentsReducer from './students';
 
 //action types
+const GOT_BOOK = 'GOT_BOOK'
 const GOT_CAMPUSES = 'GOT_CAMPUSES';
 const GOT_STUDENTS = 'GOT_STUDENTS';
 const NEW_CAMPUS = 'NEW_CAMPUS';
@@ -15,6 +16,11 @@ const DELETE_CAMPUS = 'DELETE_CAMPUS';
 const DELETE_STUDENT = 'DELETE_STUDENT';
 
 //action creators
+export const gotBook = book => ({
+  type: GOT_BOOK,
+  book
+})
+
 export const gotCampuses = campuses => ({
   type: GOT_CAMPUSES,
   campuses,
@@ -46,6 +52,16 @@ export const deleteStudent = student => ({
 });
 
 //Campus thunk creator/action creator. Creating my thunk function
+export const getBook = (searchInput) => {
+  return async dispatch => {
+    const res = await axios.get(`http://openlibrary.org/search.json?q=${searchInput}`);
+    console.log('res in index.js', res)
+    const bookInfo = res.data;
+    const currAction = gotBook(bookInfo);
+    dispatch(currAction)
+  }
+}
+
 export const fetchCampuses = () => {
   return async dispatch => {
     const response = await axios.get('/api/campuses');
