@@ -1,160 +1,21 @@
+## Coding Exercise
+For this exercise you will create a simple web application that does the following:
 ## Requirements
+[] Allow the user to search for a book.
+[] Fetch and display a list of results from the Open Library API (https://openlibrary.org/developers/api).
+[] Allow the user to sort and filter results.
+[] Allow the user to click on a result and view additional details, including at least cover art and description.
+If you don't finish within the time allotted, that's okay; submit what you've got anyway.
 
-The requirements below are broken into separate **tiers**, which model the way we **recommend you approach the project**. That is, we recommend you complete (or complete the majority of) the requirements in Tier 1 before moving on to Tier 2, and so on. Of course, if you get stuck on a particular feature, we recommend moving on and trying another feature - don't sacrifice the good for the perfect!
+[] For the front end, please use HTML, CSS, React, and Redux. You can use whatever back end technology you want as long as it can be executed in a Unix environment.
 
-### Tier 1: All Campuses and Students (21/57)
+We take the following factors into account when reviewing your submission, in addition to the above requirements (this list is not exhaustive):
 
-<details>
-
-#### Backend
-
-- [check] Write a `campuses` model with the following information:
-  - [check] name - not empty or null 
-  - [check] imageUrl - with a default value
-  - [check] address - not empty or null
-  - [check] description - extremely large text
-- [check] Write a `students` model with the following information:
-  - [check] firstName - not empty or null
-  - [check] lastName - not empty or null
-  - [check] email - not empty or null; must be a valid email
-  - [check] imageUrl - with a default value
-  - [check] gpa - decimal between 0.0 and 4.0
-- [check] Students may be associated with at most one campus. Likewise, campuses may be associated with many students 
-
-- [check] Write a route to serve up all students
-- [check] Write a route to serve up all campuses
-
-#### Frontend
-- [check] Write a campuses sub-reducer to manage campuses in your Redux store
-- [check] Write a students sub-reducer to manage students in your Redux store 
-- [check] Write a component to display a list of all campuses (just their names and images)
-- [check] Write a component to display a list of all students (just their names)
-- [check] Display the all-campuses component when the url matches `/campuses`
-- [check] Display the all-students component when the url matches `/students`
-- [check] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
-
-Congrats! You have completed your first vertical slice! Make sure to `commit -m "Feature: Get All Campuses and Students"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
-
-</details>
-
-### Tier 2: Single Student and Single Campus (14/57)
-
-<details>
-
-#### Backend
-
-- [check] Write a route to serve up a single campus (based on its id), _including that campuses' students_
-- [check] Write a route to serve up a single student (based on their id), _including that student's campus_
-
-#### Frontend
-- [check] Write a component to display a single campus with the following information:
-  - [check] The campus's name, image, address and description
-  - [check] A list of the names of all students in that campus (or a helpful message if it doesn't have any students)
-- [check] Display the appropriate campus's info when the url matches `/campuses/:campusId`
-- [check] Clicking on a campus from the all-campuses view should navigate to show that campus in the single-campus view
-
-- [check] Write a component to display a single student with the following information:
-  - [check] The student's full name, email, image, and gpa
-  - [check] The name of their campus (or a helpful message if they don't have one)
-- [check] Display the appropriate student when the url matches `/students/:studentId`
-- [check] Clicking on a student from the all-students view should navigate to show that student in the single-student view
-
-- [check] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
-- [check] Clicking on the name of a campus in the single-student view should navigate to show that campus in the single-campus view
-
-Congrats! You have completed your second vertical slice! Make sure to `commit -m "Feature: Get Single Campus and Student"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
-
-
-</details>
-
-### Tier 3: Adding a Campus and Adding a Student (12/57)
-
-<details>
-
-#### Backend
-
-- [check] Write a route to add a new campus
-- [check] Write a route to add a new student
-
-#### Frontend
-
-- [check] Write a component to display a form for adding a new campus that contains inputs for _at least_ the name and address.
-- [check] Display this component EITHER as part of the all-campuses view, or as its own view
-- [check] Submitting the form with a valid name/address should:
-  - [check] Make an AJAX request that causes the new campus to be persisted in the database
-  - [check] Add the new campus to the list of campuses without needing to refresh the page
-
-- [check] Write a component to display a form for adding a new student that contains inputs for _at least_ first name, last name and email
-- [check] Display this component EITHER as part of the all-students view, or as its own view
-- [check] Submitting the form with a valid first name/last name/email should:
-  - [check] Make an AJAX request that causes the new student to be persisted in the database
-  - [check] Add the new student to the list of students without needing to refresh the page
-
-Congrats! You have completed your third vertical slice! Make sure to `commit -m "Feature: Add Campus and Student"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
-
-
-</details>
-
-### Tier 4: Removing a Campus and Removing a Student (10/57)
-
-<details>
-
-#### Backend
-
-- [check] Write a route to remove a campus (based on its id)
-- [check] Write a route to remove a student (based on their id)
-
-#### Frontend
-
-- [check] In the all-campuses view, include an `X` button next to each campus
-- [check] Clicking the `X` button should:
-  - [check] Make an AJAX request that causes that campus to be removed from database
-  - [check] Remove the campus from the list of campuses without needing to refresh the page
-
-- [check] In the all-students view, include an `X` button next to each student
-- [check] Clicking the `X` button should:
-  - [check] Make an AJAX request that causes that student to be removed from database
-  - [check] Remove the student from the list of students without needing to refresh the page
-
-Congrats! You have completed your fourth vertical slice! Make sure to `commit -m "Feature: Remove Campus and Student"` before moving on (see `RUBRIC.md` - points are awarded/deducted for a proper git workflow)!
-
-
-</details>
-
-### Bonus Tier 1: Finishing Touches (6/16 EC)
-
-<details>
-
-- [ ] If a user attempts to add a new student or campus without a required field, a helpful message should be displayed
-- [ ] If a user attempts to access a page that doesn't exist (ex. `/cafeteria`), a helpful "not found" message should be displayed
-- [ ] If a user attempts to view a student/campus that doesn't exist, a helpful message should be displayed
-- [ ] Whenever a component needs to wait for data to load from the server, a "loading" message should be displayed until the data is available
-- [ ] Has a working `seed` file, that seeds the db with complete student and campus instances.
-- [ ] Overall, the app is spectacularly styled and visually stunning
-
-</details>
-
-### Bonus Tier 2: Updating a Campus and Updating a Student (10/16 EC)
-
-<details>
-
-#### Backend
-
-- [ ] Write a route to update an existing campus
-- [ ] Write a route to update an existing student
-
-#### Frontend
-
-- [ ] Write a component to display a form updating _at least_ a campus's name and address
-- [ ] Display this component as part of the single-campus view
-- Submitting the form with a valid name/address should:
-  - [ ] Make an AJAX request that causes that campus to be updated in the database
-  - [ ] Update the campus in the current view without needing to refresh the page
-
-- [ ] Write a component to display a form updating _at least_ a student's first and last names, and email
-- [ ] Display this component as part of the single-student view
-- Submitting the form with a valid name/address should:
-  - [ ] Make an AJAX request that causes that student to be updated in the database
-  - [ ] Update the student in the current view without needing to refresh the page
-
-</details>
+[] Good, clean code
+[] Sensible app design
+[] UI and ease-of-use
+[] Documentation (for example, a README)
+To submit the exercise, 
+1. Deploy the application to some public location where we can interact with it (e.g. AWS S3, Heroku)
+2. Push the code to GitHub or some other code hosting service, or send us an archive of your local git repository.
+Please send code that you are proud to show us!

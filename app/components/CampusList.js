@@ -42,8 +42,7 @@ class CampusList extends Component {
                 <button
                   type="button"
                   id={`${campus.id}`}
-                  onClick={this.handleClick}
-                >
+                  onClick={this.handleClick}>
                   X
                 </button>
               </li>

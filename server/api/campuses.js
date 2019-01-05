@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
     });
     res.json(campuses);
   } catch (err) {
-    res.send(err);
+    next(err);
   }
 });
 

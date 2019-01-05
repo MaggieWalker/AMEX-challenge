@@ -87,18 +87,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CampusForm);
-
-//Attempt at higher order component, made dispatching my actions confusing
-// const CampusForm = function (props) {
-//     const { handleSubmit, handleChange } = props
-
-//     return (
-//         <form onSubmit={handleSubmit}>
-//             <input type="text" name="name" id="campusInput" onChange={handleChange} placeholder="Name" />
-//             <input type="text" name="address" id="addressInput" onChange={handleChange} placeholder="Address" />
-//             <button type="submit" id="campusButton">Add New Campus!</button>
-//         </form>
-//     )
-// }
-
-// export default createForm(CampusForm)

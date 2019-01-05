@@ -47,7 +47,7 @@ class SingleCampus extends Component {
             </div>
           </div>
         ) : (
-          <div>Nothing to load!</div>
+          <div>No campus with this id!</div>
         )}
       </div>
     );

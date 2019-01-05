@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchStudents, removeStudent } from '../reducers/index';
 import { Link } from 'react-router-dom';
 
-class StudentList extends Component {
+class StudentList extends Component { 
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
